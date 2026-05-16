@@ -31,3 +31,4 @@
 /Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/obj/Debug/net10.0/ProyectoClaseQ2.pdb
 /Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/obj/Debug/net10.0/ProyectoClaseQ2.genruntimeconfig.cache
 /Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/obj/Debug/net10.0/ref/ProyectoClaseQ2.dll
+/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/obj/Debug/net10.0/ProyectoClaseQ2.sourcelink.json
