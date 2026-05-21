@@ -1,8 +1,11 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Google.Cloud.Firestore;
 using ProyectoClaseQ2.DTOs;
 using ProyectoClaseQ2.Models;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace ProyectoClaseQ2.Services;
@@ -53,6 +56,73 @@ public class AuthService
             { "CreatedAt", user.CreatedAt }
         });
         return user;
+    }
+
+    public async Task<string> Login(LoginDto dto)
+    {
+        // Buscar al usuario por correo en FS
+        var collection = _firebaseService.GetCollection("users");
+        var snapshot = await collection
+            .WhereEqualTo("Email", dto.Email)
+            .GetSnapshotAsync();
+        
+        if(snapshot.Count == 0)
+            throw new Exception("No existe ningun usuario con esa credencial");
+        
+        // Si lo encontramos mapeamos manualmente el documento a nuestro objeto
+        // Usamos ToDictionary()
+        var doc = snapshot.Documents[0];
+        var data = doc.ToDictionary();
+
+        var user = new User
+        {
+            Id = data["Id"].ToString()!,
+            FullName = data["FullName"].ToString()!,
+            Email = data["Email"].ToString()!,
+            PasswordHash = data["PasswordHash"].ToString()!,
+            Role = data["Role"].ToString()!,
+            // Int64, necesitamos convertirlo
+            CreatedAt = ((Google.Cloud.Firestore.Timestamp)data["CreatedAt"]).ToDateTime()  
+        };
+        
+        // Verificar si la contraseña esta hasheada
+        if(!VerifyPassword(dto.Password, user.PasswordHash))
+            throw new Exception("Password incorrecto");
+        
+        // Se completo exitosamente, generamos un token JWT
+        return GenerateToken(user);
+
+    }
+
+    private string GenerateToken(User user)
+    {
+        // El token lleva cierta informacion, Id, Email y Role del usuario que hizo login
+        // Para proteccion de los endpoints, se sabe quien los esta llamando
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, user.Role)
+        };
+
+        var key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                
+                var token = new JwtSecurityToken(
+                        
+                        issuer: _configuration["Jwt:Issuer"], //Quien lo genera, nuestro token lo genera la app
+                        audience: _configuration["Jwt:Issuer"], // Para quien lo genera, clientes / front-end
+                        claims: claims, // Estos son los datos del usuario
+                        expires: DateTime.UtcNow.AddHours(8), //Tiempo de vida del token
+                        signingCredentials: creds // Firma de seguridad
+                        );
+                    return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    private bool VerifyPassword(string dtoPassword, string userPasswordHash)
+    {
+        return HashPasword(dtoPassword) == userPasswordHash;
     }
 
     // Para encriptar la contraseña

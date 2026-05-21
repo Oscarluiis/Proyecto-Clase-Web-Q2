@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/ProyectoClaseQ2.csproj": {}
+    "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/ProyectoClaseQ2.csproj": {}
   },
   "projects": {
-    "/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/ProyectoClaseQ2.csproj": {
+    "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/ProyectoClaseQ2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/ProyectoClaseQ2.csproj",
+        "projectUniqueName": "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/ProyectoClaseQ2.csproj",
         "projectName": "ProyectoClaseQ2",
-        "projectPath": "/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/ProyectoClaseQ2.csproj",
-        "packagesPath": "/Users/oscarluiis/.nuget/packages/",
-        "outputPath": "/Users/oscarluiis/RiderProjects/ProyectoClaseQ2/ProyectoClaseQ2/obj/",
+        "projectPath": "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/ProyectoClaseQ2.csproj",
+        "packagesPath": "/home/oscarluiis/.nuget/packages/",
+        "outputPath": "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/oscarluiis/.nuget/NuGet/NuGet.Config"
+          "/home/oscarluiis/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/oscarluiis/.dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
