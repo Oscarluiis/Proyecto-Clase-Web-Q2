@@ -95,3 +95,4 @@
 /home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/obj/Debug/net10.0/ProyectoClaseQ2.pdb
 /home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/obj/Debug/net10.0/ProyectoClaseQ2.genruntimeconfig.cache
 /home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/obj/Debug/net10.0/ref/ProyectoClaseQ2.dll
+/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/bin/Debug/net10.0/Config/firebase-credentials.json

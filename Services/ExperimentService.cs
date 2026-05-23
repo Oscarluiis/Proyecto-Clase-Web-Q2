@@ -68,16 +68,3 @@ public class ExperimentService
         return experiments;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
