@@ -19,7 +19,11 @@ builder.Services.AddControllers();
 
 // AddOpenApi registrar el generador de documentacion que Scalar va a leer
 // !existe Scalar no va poder reconocer los endpoints que existen ni como los definieron
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    // Registramos el transformer que agrega el botón de Bearer en Scalar
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+});
 
 // Autenticacion JWT
 // Le decimos a al app que el esquema de auth es JWT Bearer
@@ -71,6 +75,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference(options =>
     {
         options.WithTitle("Proyecto de Clase 847")
+            .WithPreferredScheme("Bearer")
             .WithHttpBearerAuthentication(bearer =>
             {
                 bearer.Token = "";

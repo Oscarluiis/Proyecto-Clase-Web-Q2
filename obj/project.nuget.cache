@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vFmS5tUU5SA=",
+  "dgSpecHash": "j76mE9+1Y8Y=",
   "success": true,
   "projectFilePath": "/home/oscarluiis/Documents/847/Proyecto-Clase-Web-Q2/ProyectoClaseQ2.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,7 @@
     "/home/oscarluiis/.nuget/packages/grpc.net.client/2.71.0/grpc.net.client.2.71.0.nupkg.sha512",
     "/home/oscarluiis/.nuget/packages/grpc.net.common/2.71.0/grpc.net.common.2.71.0.nupkg.sha512",
     "/home/oscarluiis/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/10.0.8/microsoft.aspnetcore.authentication.jwtbearer.10.0.8.nupkg.sha512",
-    "/home/oscarluiis/.nuget/packages/microsoft.aspnetcore.openapi/10.0.7/microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512",
+    "/home/oscarluiis/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
     "/home/oscarluiis/.nuget/packages/microsoft.bcl.asyncinterfaces/10.0.3/microsoft.bcl.asyncinterfaces.10.0.3.nupkg.sha512",
     "/home/oscarluiis/.nuget/packages/microsoft.identitymodel.abstractions/8.0.1/microsoft.identitymodel.abstractions.8.0.1.nupkg.sha512",
     "/home/oscarluiis/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.1/microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
